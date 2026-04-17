@@ -2,13 +2,13 @@ package main
 
 import (
 	"fmt"
-	"log"
+	"os"
 	"scaffold/cmd"
 )
 
 func main() {
-	fmt.Println("cli Start")
 	if err := cmd.Execute(); err != nil {
-		log.Fatal(err)
+		fmt.Println("error:", err)
+		os.Exit(1)
 	}
 }
